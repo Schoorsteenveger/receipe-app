@@ -1,19 +1,19 @@
-const express = require('express');
-const { getRecipes, getRecipeItem, createRecipe, updateRecipe, deleteRecipe } = require('../Controllers/recipeController');
+import express from 'express';
+import { getRecipes, getRecipeItem, createRecipe, updateRecipe, deleteRecipe } from '../Controllers/recipeController.js';
 
 // App Routes
 
 const router = express.Router();
 
-router.get('/', getRecipes);// Homepage
+router.get('/', getRecipes); // Homepage. Get recipes
 
-router.get('/:id', getRecipeItem); // Details Recipe Item
+router.get('/:id', getRecipeItem); // Get Details Recipe Item
 
-router.post('/', createRecipe); // 
+router.post('/', createRecipe); // Create Recipe and save to database
 
-router.put('/:id', updateRecipe);
+router.put('/:id', updateRecipe); // Update Recipe and save to database
 
-router.delete('/:id', deleteRecipe);
+router.delete('/:id', deleteRecipe); // Delete Recipe and save to database
 
 // Search Recipe
 
@@ -21,4 +21,4 @@ router.delete('/:id', deleteRecipe);
 
 // vegetarian recipe - explore vegetarian
 
-module.exports = router;
+export default router;
